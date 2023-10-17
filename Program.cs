@@ -13,8 +13,9 @@ namespace Anagrafica
             VisualizzaAnagrafica = 2,
             EtàPersona = 3,
             Modifica = 4,
-            Esci = 5
-            
+            Esci = 6,
+            Cancella = 5
+
         }
 
         enum Sesso
@@ -45,9 +46,10 @@ namespace Anagrafica
 
         static void Main(string[] args)
         {
+            string codiceFiscale;
             Persona[] anagrafica = new Persona[3];
             int ContaPersone = 0;
-            bool continua = true;
+            bool continua = true, presente;
             do
             {
                 Console.Clear();
@@ -67,9 +69,30 @@ namespace Anagrafica
                         break;
                     case Opzioni.Modifica:
                         Console.Clear();
-                        Console.WriteLine("Di quale persona vuoi cambiare lo stato civile?");
-                        string codiceFiscale = Console.ReadLine();
+                        do
+                        {
+                            Console.WriteLine("Di quale persona vuoi cambiare lo stato civile?");
+                            codiceFiscale = Console.ReadLine();
+                            presente = RicercaCF(codiceFiscale,anagrafica);
+                            if (!presente)
+                            {
+                                Console.WriteLine("Codice Fiscale non presente");
+                            }
+                        } while (!presente);
                         Modifica(codiceFiscale, anagrafica);
+                        break;
+                    case Opzioni.Cancella:
+                        do
+                        {
+                            Console.WriteLine("Quale persona vuoi cancellare?");
+                            codiceFiscale = Console.ReadLine();
+                            presente = RicercaCF(codiceFiscale, anagrafica);
+                            if (!presente)
+                            {
+                                Console.WriteLine("Codice Fiscale non presente");
+                            }
+                        } while (!presente);
+                        Canecella(anagrafica, codiceFiscale);
                         break;
                     case Opzioni.Esci:
                         continua = false;
@@ -301,9 +324,21 @@ namespace Anagrafica
             }
             return età;
         }
+        static bool RicercaCF(string codiceFiscaele, Persona[] anagrafica)
+        {
+            bool presente = false;
+            for (int i = 0; i < anagrafica.Length; i++)
+            {
+                if (codiceFiscaele == anagrafica[i].codiceFiscale)
+                {
+                    presente = true;
+                }
+            }
+            return presente;
+        }
         static void Modifica(string codiceFiscale, Persona[] anagrafica)
         {
-            
+
             for (int i = 0; i < anagrafica.Length; i++)
             {
                 if (codiceFiscale == anagrafica[i].codiceFiscale)
@@ -320,13 +355,19 @@ namespace Anagrafica
                         return;
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Codice fiscale non esiste");
-                }
 
             }
 
+        }
+        static void Canecella(Persona[] anagrafica, string CF)
+        {
+            for (int i=0; i < anagrafica.Length; i++)
+            {
+                if (CF == anagrafica[i].codiceFiscale)
+                {
+
+                }
+            }
         }
     }
 }
