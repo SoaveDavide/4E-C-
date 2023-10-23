@@ -82,17 +82,9 @@ namespace Anagrafica
                         Modifica(codiceFiscale, anagrafica);
                         break;
                     case Opzioni.Cancella:
-                        do
-                        {
-                            Console.WriteLine("Quale persona vuoi cancellare?");
-                            codiceFiscale = Console.ReadLine();
-                            presente = RicercaCF(codiceFiscale, anagrafica);
-                            if (!presente)
-                            {
-                                Console.WriteLine("Codice Fiscale non presente");
-                            }
-                        } while (!presente);
-                        Canecella(anagrafica, codiceFiscale);
+                        
+                        
+                        
                         break;
                     case Opzioni.Esci:
                         continua = false;
@@ -358,16 +350,6 @@ namespace Anagrafica
 
             }
 
-        }
-        static void Canecella(Persona[] anagrafica, string CF)
-        {
-            for (int i=0; i < anagrafica.Length; i++)
-            {
-                if (CF == anagrafica[i].codiceFiscale)
-                {
-
-                }
-            }
         }
     }
 }
