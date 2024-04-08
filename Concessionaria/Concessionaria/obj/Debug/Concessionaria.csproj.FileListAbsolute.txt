@@ -1,0 +1,10 @@
+E:\Soave\Concessionaria\Concessionaria\bin\Debug\Concessionaria.exe.config
+E:\Soave\Concessionaria\Concessionaria\bin\Debug\Concessionaria.exe
+E:\Soave\Concessionaria\Concessionaria\bin\Debug\Concessionaria.pdb
+E:\Soave\Concessionaria\Concessionaria\obj\Debug\Concessionaria.csproj.AssemblyReference.cache
+E:\Soave\Concessionaria\Concessionaria\obj\Debug\Concessionaria.Form1.resources
+E:\Soave\Concessionaria\Concessionaria\obj\Debug\Concessionaria.Properties.Resources.resources
+E:\Soave\Concessionaria\Concessionaria\obj\Debug\Concessionaria.csproj.GenerateResource.cache
+E:\Soave\Concessionaria\Concessionaria\obj\Debug\Concessionaria.csproj.CoreCompileInputs.cache
+E:\Soave\Concessionaria\Concessionaria\obj\Debug\Concessionaria.exe
+E:\Soave\Concessionaria\Concessionaria\obj\Debug\Concessionaria.pdb
